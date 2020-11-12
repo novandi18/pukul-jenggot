@@ -1,0 +1,64 @@
+.slide {
+    margin-left: -360px;
+}
+
+.optionbar {
+    height: 100%;
+    background-color: white;
+    width: 350px;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 1px 1px 0px 8px rgba(0,0,0,.1);
+    padding: 0;
+    /* border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px; */
+    transition: all 0.3s;
+}
+
+.optionbar #bg-option {
+    font-size: 350px;
+    opacity: .05;
+    margin-top: -100%;
+    margin-left: -100px;
+}
+
+.optionbar .title {
+    padding: 35px;
+    font-size: 45px;
+    font-weight: bold;
+    color: #29e568;
+    text-shadow: 4px 4px rgba(0, 0, 0, .05);
+}
+
+.optionbar .option-list {
+    padding: 0 35px;
+    height: 100%;
+}
+
+.option-list .pilih-waktu {
+    display: block;
+}
+
+.option-list .pilih-waktu span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.option-list .pilih-waktu select {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.option-list .jumlah-karakter {
+    display: block;
+    margin-top: 20px;
+}
+
+.option-list .jumlah-karakter select {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 10px;
+    cursor: not-allowed;
+}
