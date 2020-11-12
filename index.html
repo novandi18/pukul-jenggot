@@ -1,50 +1,113 @@
-<!-- Pukul si Jenggot -->
-<!-- Novandi Ramadhan @ 2020 -->
-<!-- Inspired by Web Programming Unpas -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pukul Tikus</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pukul si Jenggot!</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="library/fontawesome/all.css">
     <link rel="shortcut icon" href="img/jenggot.png" type="image/png">
-</head>
-<body>
-    <h1>Pukul Si Jenggot!</h1>
-    
-    <div style="text-align: center; margin-top: -12px">
-        <button type="button" class="mulai" onclick="mulai()">Mulai!</button>
-    </div>
+    <link rel="stylesheet" href="css/optionbar.css">
 
-    <div class="poin" style="margin-top: 10px;">
-        <h2 class="papan-skor">0</h2>
-    </div>
-
-
+    <script src="js/jquery.min.js"></script>
+  </head>
+  
+  <body>
     <div class="container">
-        <div class="rumput">
-            <div class="jenggot"></div>
+      <div class="item header">
+        <a href="#" id="btn-menu" class="menu-icon"><i class="fa fa-bars"></i></a>
+        <h1>Pukul si Jenggot!</h1>
+        <button type="button" class="config" onclick="showOption()"><i class="fas fa-cog"></i></button>
+        <button type="button" class="config-close hidden" onclick="hideOption()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="item content palu">
+        <div type="button" id="papan-waktu-mulai" class="waktu-mulai hidden">5</div>
+        <button type="button" class="mulai" onclick="mulai()">Mulai!</button>
+        <div class="game">
+          
+          <div class="ingame opacity">
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+            <div class="rumput">
+              <div class="jenggot"></div>
+            </div>
+          </div>
         </div>
-        <div class="rumput">
-            <div class="jenggot"></div>
-        </div>
-        <div class="rumput">
-            <div class="jenggot"></div>
-        </div>
-        <div class="rumput">
-            <div class="jenggot"></div>
-        </div>
-        <div class="rumput">
-            <div class="jenggot"></div>
-        </div>
-        <div class="rumput">
-            <div class="jenggot"></div>
-        </div>
-    </div>
+      </div>
 
-    <audio src="audio/Pop.mp3" id="pop"></audio>
-    <script src="js/script.js"></script>
-</body>
-</html>
+      <div class="item sidebar">
+        <div class="sidebar-form">
+          <div class="time">
+              <p id="papan-waktu" class="papan-waktu">10:00</p>
+          </div>
+          <div class="title-skor">
+            <span class="score">Score</span>
+            <div class="poin">
+              <span class="papan-skor">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud background animation -->
+      <div id="clouds">
+        <div class="cloud x1"><img class="i1" src="img/clouds/1.png"></div>
+        <!-- Time for multiple clouds to dance around -->
+        <div class="cloud x2"><img class="i2" src="img/clouds/2.png"></div>
+        <div class="cloud x3"><img class="i3" src="img/clouds/5.png"></div>
+        <div class="cloud x4"><img class="i4" src="img/clouds/6.png"></div>
+        <div class="cloud x5"><img class="i5" src="img/clouds/9.png"></div>
+      </div>
+
+      <!-- Cloud background -->
+      <div class="awan">
+        <div class="bg">
+          <img src="img/cloud.png">
+        </div>
+      </div>
+
+      <div class="optionbar slide">
+        <div class="title">
+          <span>Pengaturan</span>
+        </div>
+        <div class="option-list">
+          <!-- Durasi Permainan -->
+          <div class="pilih-waktu">
+            <span>Pilih Waktu :</span>
+            <select id="pilihan-waktu" onchange="ubahWaktuGame()">
+              <option value="10" id="1" selected>10 detik (default)</option>
+              <option value="15" id="2">15 detik</option>
+              <option value="20" id="3">20 detik</option>
+              <option value="30" id="4">30 detik</option>
+            </select>
+          </div>
+        </div>
+        <i id="bg-option" class="fa fa-cog"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="library/fontawesome/all.js"></script>
+  </body>
+  </html>
